@@ -1,0 +1,7 @@
+.idea/
+src/vendor/
+src/var/
+storage/
+src/.phpcs-cache
+.env
+

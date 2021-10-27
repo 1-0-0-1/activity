@@ -1,0 +1,56 @@
+version: '3'
+services:
+  db:
+    build:
+      context: .docker/mariadb
+    restart: always
+    ports:
+      - "33021:3306"
+    volumes:
+      - ./storage/db:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+      MYSQL_DATABASE: database
+    networks:
+      container_network:
+        ipv4_address: 10.10.21.3
+  php:
+    build:
+      context: .docker/php-fpm
+    restart: always
+    depends_on:
+      - db
+    volumes:
+      - ./src/:/var/www/html/
+      - ./storage/var/:/var/www/html/var/
+    environment:
+      COMPOSER_ALLOW_SUPERUSER: 1
+      DB_USER: user
+      DB_PASSWORD: password
+      DB_DATABASE: database
+      PHP_IDE_CONFIG: "serverName=DockerActivity"
+    networks:
+      container_network:
+        ipv4_address: 10.10.21.2
+  nginx:
+    build:
+      context: .docker/nginx
+    restart: always
+    depends_on:
+      - php
+    ports:
+      - "8021:80"
+    volumes:
+      - ./src/public/:/var/www/html/public/
+    networks:
+      container_network:
+        ipv4_address: 10.10.21.4
+
+networks:
+  container_network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.10.21.0/24
