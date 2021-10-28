@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "611f526b000cfc3bd703fd5f97ae7059",
+    "content-hash": "9ac474a04cac9e21c069e628c7b91e7a",
     "packages": [
         {
             "name": "composer/package-versions-deprecated",
@@ -1589,6 +1589,105 @@
                 }
             ],
             "time": "2021-09-21T13:40:23+00:00"
+        },
+        {
+            "name": "monolog/monolog",
+            "version": "2.3.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Seldaek/monolog.git",
+                "reference": "fd4380d6fc37626e2f799f29d91195040137eba9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/fd4380d6fc37626e2f799f29d91195040137eba9",
+                "reference": "fd4380d6fc37626e2f799f29d91195040137eba9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2",
+                "psr/log": "^1.0.1 || ^2.0 || ^3.0"
+            },
+            "provide": {
+                "psr/log-implementation": "1.0.0 || 2.0.0 || 3.0.0"
+            },
+            "require-dev": {
+                "aws/aws-sdk-php": "^2.4.9 || ^3.0",
+                "doctrine/couchdb": "~1.0@dev",
+                "elasticsearch/elasticsearch": "^7",
+                "graylog2/gelf-php": "^1.4.2",
+                "mongodb/mongodb": "^1.8",
+                "php-amqplib/php-amqplib": "~2.4 || ^3",
+                "php-console/php-console": "^3.1.3",
+                "phpspec/prophecy": "^1.6.1",
+                "phpstan/phpstan": "^0.12.91",
+                "phpunit/phpunit": "^8.5",
+                "predis/predis": "^1.1",
+                "rollbar/rollbar": "^1.3",
+                "ruflin/elastica": ">=0.90@dev",
+                "swiftmailer/swiftmailer": "^5.3|^6.0"
+            },
+            "suggest": {
+                "aws/aws-sdk-php": "Allow sending log messages to AWS services like DynamoDB",
+                "doctrine/couchdb": "Allow sending log messages to a CouchDB server",
+                "elasticsearch/elasticsearch": "Allow sending log messages to an Elasticsearch server via official client",
+                "ext-amqp": "Allow sending log messages to an AMQP server (1.0+ required)",
+                "ext-curl": "Required to send log messages using the IFTTTHandler, the LogglyHandler, the SendGridHandler, the SlackWebhookHandler or the TelegramBotHandler",
+                "ext-mbstring": "Allow to work properly with unicode symbols",
+                "ext-mongodb": "Allow sending log messages to a MongoDB server (via driver)",
+                "ext-openssl": "Required to send log messages using SSL",
+                "ext-sockets": "Allow sending log messages to a Syslog server (via UDP driver)",
+                "graylog2/gelf-php": "Allow sending log messages to a GrayLog2 server",
+                "mongodb/mongodb": "Allow sending log messages to a MongoDB server (via library)",
+                "php-amqplib/php-amqplib": "Allow sending log messages to an AMQP server using php-amqplib",
+                "php-console/php-console": "Allow sending log messages to Google Chrome",
+                "rollbar/rollbar": "Allow sending log messages to Rollbar",
+                "ruflin/elastica": "Allow sending log messages to an Elastic Search server"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Monolog\\": "src/Monolog"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jordi Boggiano",
+                    "email": "j.boggiano@seld.be",
+                    "homepage": "https://seld.be"
+                }
+            ],
+            "description": "Sends your logs to files, sockets, inboxes, databases and various web services",
+            "homepage": "https://github.com/Seldaek/monolog",
+            "keywords": [
+                "log",
+                "logging",
+                "psr-3"
+            ],
+            "support": {
+                "issues": "https://github.com/Seldaek/monolog/issues",
+                "source": "https://github.com/Seldaek/monolog/tree/2.3.5"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/Seldaek",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/monolog/monolog",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-10-01T21:08:31+00:00"
         },
         {
             "name": "psr/cache",
@@ -3320,6 +3419,171 @@
             "time": "2021-09-28T10:25:11+00:00"
         },
         {
+            "name": "symfony/monolog-bridge",
+            "version": "v5.3.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/monolog-bridge.git",
+                "reference": "4ace41087254f099b6743333155071438bfb12c3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/monolog-bridge/zipball/4ace41087254f099b6743333155071438bfb12c3",
+                "reference": "4ace41087254f099b6743333155071438bfb12c3",
+                "shasum": ""
+            },
+            "require": {
+                "monolog/monolog": "^1.25.1|^2",
+                "php": ">=7.2.5",
+                "symfony/deprecation-contracts": "^2.1",
+                "symfony/http-kernel": "^5.3",
+                "symfony/polyfill-php80": "^1.16",
+                "symfony/service-contracts": "^1.1|^2"
+            },
+            "conflict": {
+                "symfony/console": "<4.4",
+                "symfony/http-foundation": "<5.3"
+            },
+            "require-dev": {
+                "symfony/console": "^4.4|^5.0",
+                "symfony/http-client": "^4.4|^5.0",
+                "symfony/mailer": "^4.4|^5.0",
+                "symfony/messenger": "^4.4|^5.0",
+                "symfony/mime": "^4.4|^5.0",
+                "symfony/security-core": "^4.4|^5.0",
+                "symfony/var-dumper": "^4.4|^5.0"
+            },
+            "suggest": {
+                "symfony/console": "For the possibility to show log messages in console commands depending on verbosity settings.",
+                "symfony/http-kernel": "For using the debugging handlers together with the response life cycle of the HTTP kernel.",
+                "symfony/var-dumper": "For using the debugging handlers like the console handler or the log server handler."
+            },
+            "type": "symfony-bridge",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Bridge\\Monolog\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Provides integration for Monolog with various Symfony components",
+            "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/monolog-bridge/tree/v5.3.7"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-08-13T15:54:02+00:00"
+        },
+        {
+            "name": "symfony/monolog-bundle",
+            "version": "v3.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/monolog-bundle.git",
+                "reference": "4054b2e940a25195ae15f0a49ab0c51718922eb4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/monolog-bundle/zipball/4054b2e940a25195ae15f0a49ab0c51718922eb4",
+                "reference": "4054b2e940a25195ae15f0a49ab0c51718922eb4",
+                "shasum": ""
+            },
+            "require": {
+                "monolog/monolog": "~1.22 || ~2.0",
+                "php": ">=7.1.3",
+                "symfony/config": "~4.4 || ^5.0",
+                "symfony/dependency-injection": "^4.4 || ^5.0",
+                "symfony/http-kernel": "~4.4 || ^5.0",
+                "symfony/monolog-bridge": "~4.4 || ^5.0"
+            },
+            "require-dev": {
+                "symfony/console": "~4.4 || ^5.0",
+                "symfony/phpunit-bridge": "^5.1",
+                "symfony/yaml": "~4.4 || ^5.0"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Bundle\\MonologBundle\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony MonologBundle",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "log",
+                "logging"
+            ],
+            "support": {
+                "issues": "https://github.com/symfony/monolog-bundle/issues",
+                "source": "https://github.com/symfony/monolog-bundle/tree/v3.7.0"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-03-31T07:20:47+00:00"
+        },
+        {
             "name": "symfony/polyfill-intl-grapheme",
             "version": "v1.23.1",
             "source": {
@@ -4265,6 +4529,194 @@
             "time": "2021-08-26T08:00:08+00:00"
         },
         {
+            "name": "symfony/translation-contracts",
+            "version": "v2.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/translation-contracts.git",
+                "reference": "95c812666f3e91db75385749fe219c5e494c7f95"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/translation-contracts/zipball/95c812666f3e91db75385749fe219c5e494c7f95",
+                "reference": "95c812666f3e91db75385749fe219c5e494c7f95",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.5"
+            },
+            "suggest": {
+                "symfony/translation-implementation": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "2.4-dev"
+                },
+                "thanks": {
+                    "name": "symfony/contracts",
+                    "url": "https://github.com/symfony/contracts"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Contracts\\Translation\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Generic abstractions related to translation",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "abstractions",
+                "contracts",
+                "decoupling",
+                "interfaces",
+                "interoperability",
+                "standards"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/translation-contracts/tree/v2.4.0"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-03-23T23:28:01+00:00"
+        },
+        {
+            "name": "symfony/validator",
+            "version": "v5.3.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/validator.git",
+                "reference": "3a773f6f03ef2846c280e4f5b5f34cf950ead127"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/validator/zipball/3a773f6f03ef2846c280e4f5b5f34cf950ead127",
+                "reference": "3a773f6f03ef2846c280e4f5b5f34cf950ead127",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.5",
+                "symfony/deprecation-contracts": "^2.1",
+                "symfony/polyfill-ctype": "~1.8",
+                "symfony/polyfill-mbstring": "~1.0",
+                "symfony/polyfill-php73": "~1.0",
+                "symfony/polyfill-php80": "^1.16",
+                "symfony/translation-contracts": "^1.1|^2"
+            },
+            "conflict": {
+                "doctrine/lexer": "<1.0.2",
+                "phpunit/phpunit": "<5.4.3",
+                "symfony/dependency-injection": "<4.4",
+                "symfony/expression-language": "<5.1",
+                "symfony/http-kernel": "<4.4",
+                "symfony/intl": "<4.4",
+                "symfony/property-info": "<5.3",
+                "symfony/translation": "<4.4",
+                "symfony/yaml": "<4.4"
+            },
+            "require-dev": {
+                "doctrine/annotations": "^1.10.4",
+                "doctrine/cache": "^1.0|^2.0",
+                "egulias/email-validator": "^2.1.10|^3",
+                "symfony/cache": "^4.4|^5.0",
+                "symfony/config": "^4.4|^5.0",
+                "symfony/console": "^4.4|^5.0",
+                "symfony/dependency-injection": "^4.4|^5.0",
+                "symfony/expression-language": "^5.1",
+                "symfony/finder": "^4.4|^5.0",
+                "symfony/http-client": "^4.4|^5.0",
+                "symfony/http-foundation": "^4.4|^5.0",
+                "symfony/http-kernel": "^4.4|^5.0",
+                "symfony/intl": "^4.4|^5.0",
+                "symfony/mime": "^4.4|^5.0",
+                "symfony/property-access": "^4.4|^5.0",
+                "symfony/property-info": "^5.3",
+                "symfony/translation": "^4.4|^5.0",
+                "symfony/yaml": "^4.4|^5.0"
+            },
+            "suggest": {
+                "egulias/email-validator": "Strict (RFC compliant) email validation",
+                "psr/cache-implementation": "For using the mapping cache.",
+                "symfony/config": "",
+                "symfony/expression-language": "For using the Expression validator and the ExpressionLanguageSyntax constraints",
+                "symfony/http-foundation": "",
+                "symfony/intl": "",
+                "symfony/property-access": "For accessing properties within comparison constraints",
+                "symfony/property-info": "To automatically add NotNull and Type constraints",
+                "symfony/translation": "For translating validation errors.",
+                "symfony/yaml": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Validator\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Provides tools to validate values",
+            "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/validator/tree/v5.3.8"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-09-21T20:52:44+00:00"
+        },
+        {
             "name": "symfony/var-dumper",
             "version": "v5.3.8",
             "source": {
@@ -4499,6 +4951,481 @@
                 }
             ],
             "time": "2021-07-29T06:20:01+00:00"
+        },
+        {
+            "name": "yoanm/jsonrpc-params-symfony-constraint-doc-sdk",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yoanm/php-jsonrpc-params-symfony-constraint-doc-sdk.git",
+                "reference": "d6b540b783797c1e5e20299e53e25aa068c7c000"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yoanm/php-jsonrpc-params-symfony-constraint-doc-sdk/zipball/d6b540b783797c1e5e20299e53e25aa068c7c000",
+                "reference": "d6b540b783797c1e5e20299e53e25aa068c7c000",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2",
+                "symfony/validator": "^4.0 || ^5.0",
+                "yoanm/jsonrpc-server-doc-sdk": "^0.2"
+            },
+            "require-dev": {
+                "behat/behat": "~3.0",
+                "phpunit/phpunit": "^7.0 || ^8.0",
+                "squizlabs/php_codesniffer": "3.*",
+                "symfony/expression-language": "^4.0 || ^5.0",
+                "symfony/intl": "^4.0 || ^5.0",
+                "yoanm/php-unit-extended": "^1.0"
+            },
+            "suggest": {
+                "yoanm/symfony-jsonrpc-http-server": "Symfony Bundle to convert an HTTP json-rpc request into HTTP json-rpc response",
+                "yoanm/symfony-jsonrpc-http-server-doc": "Symfony bundle for easy JSON-RPC server documentation",
+                "yoanm/symfony-jsonrpc-params-sf-constraints-doc": "Symfony bundle for easy Symfony constraints to JSON-RPC documentation transformation"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Yoanm\\JsonRpcParamsSymfonyConstraintDoc\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Yoanm",
+                    "email": "yoanm@users.noreply.github.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "SDK to generate JSON-RPC documentation from symfony constraint",
+            "support": {
+                "issues": "https://github.com/yoanm/php-jsonrpc-params-symfony-constraint-doc-sdk/issues",
+                "source": "https://github.com/yoanm/php-jsonrpc-params-symfony-constraint-doc-sdk/tree/v1.0.1"
+            },
+            "time": "2020-07-09T04:42:58+00:00"
+        },
+        {
+            "name": "yoanm/jsonrpc-params-symfony-validator-sdk",
+            "version": "v2.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yoanm/php-jsonrpc-params-symfony-validator-sdk.git",
+                "reference": "f417a0c62195bfceee6556c3d88fe7a27bf045bb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yoanm/php-jsonrpc-params-symfony-validator-sdk/zipball/f417a0c62195bfceee6556c3d88fe7a27bf045bb",
+                "reference": "f417a0c62195bfceee6556c3d88fe7a27bf045bb",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2",
+                "symfony/validator": "^4.0 || ^5.0",
+                "yoanm/jsonrpc-server-sdk": "^3.0"
+            },
+            "require-dev": {
+                "behat/behat": "~3.0",
+                "phpunit/phpunit": "^7.0 || ^8.0",
+                "squizlabs/php_codesniffer": "3.*",
+                "yoanm/php-unit-extended": "^1.0"
+            },
+            "suggest": {
+                "yoanm/jsonrpc-params-symfony-constraint-doc-sdk": "To generate payload documentation from validation constraints",
+                "yoanm/symfony-jsonrpc-http-server": "Symfony Bundle to convert an HTTP json-rpc request into HTTP json-rpc response",
+                "yoanm/symfony-jsonrpc-params-validator": "Symfony bundle for easy JSON-RPC params validation"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Yoanm\\JsonRpcParamsSymfonyValidator\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Yoanm",
+                    "email": "yoanm@users.noreply.github.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Simple JSON-RPC params validator that use Symfony validator component",
+            "support": {
+                "issues": "https://github.com/yoanm/php-jsonrpc-params-symfony-validator-sdk/issues",
+                "source": "https://github.com/yoanm/php-jsonrpc-params-symfony-validator-sdk/tree/v2.0.2"
+            },
+            "time": "2020-07-09T04:42:09+00:00"
+        },
+        {
+            "name": "yoanm/jsonrpc-server-doc-sdk",
+            "version": "v0.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yoanm/php-jsonrpc-server-doc-sdk.git",
+                "reference": "473faefd35fa18aeca7414f99da492ad5c116c31"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yoanm/php-jsonrpc-server-doc-sdk/zipball/473faefd35fa18aeca7414f99da492ad5c116c31",
+                "reference": "473faefd35fa18aeca7414f99da492ad5c116c31",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1"
+            },
+            "require-dev": {
+                "behat/behat": "~3.0",
+                "ext-json": "*",
+                "phpunit/phpunit": "^7.0 || ^8.0",
+                "squizlabs/php_codesniffer": "3.*",
+                "yoanm/php-unit-extended": "~1.0"
+            },
+            "suggest": {
+                "yoanm/jsonrpc-http-server-openapi-doc-sdk": "SDK to generate Http JSON-RPC server documentation for OpenAPI v3.0.0",
+                "yoanm/jsonrpc-http-server-swagger-doc-sdk": "SDK to generate Http JSON-RPC server documentation for Swagger v2.0",
+                "yoanm/jsonrpc-params-symfony-constraint-doc-sdk": "SDK to generate JSON-RPC documentation from symfony constraint",
+                "yoanm/jsonrpc-server-sdk": "Server SDK to convert a json-rpc request string into json-rpc response string",
+                "yoanm/symfony-jsonrpc-http-server": "Symfony Bundle to convert an HTTP json-rpc request into HTTP json-rpc response",
+                "yoanm/symfony-jsonrpc-http-server-doc": "Symfony bundle for easy JSON-RPC server documentation"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Yoanm\\JsonRpcServerDoc\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Yoanm",
+                    "email": "yoanm@users.noreply.github.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "SDK to generate (Http) JSON-RPC server documentation",
+            "support": {
+                "issues": "https://github.com/yoanm/php-jsonrpc-server-doc-sdk/issues",
+                "source": "https://github.com/yoanm/php-jsonrpc-server-doc-sdk/tree/v0.2.1"
+            },
+            "time": "2020-07-09T04:40:41+00:00"
+        },
+        {
+            "name": "yoanm/jsonrpc-server-sdk",
+            "version": "v3.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yoanm/php-jsonrpc-server-sdk.git",
+                "reference": "dcd886d0ae9246129ec8fbf5e082eff1fc3c49ea"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yoanm/php-jsonrpc-server-sdk/zipball/dcd886d0ae9246129ec8fbf5e082eff1fc3c49ea",
+                "reference": "dcd886d0ae9246129ec8fbf5e082eff1fc3c49ea",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": ">=7.1"
+            },
+            "require-dev": {
+                "behat/behat": "~3.0",
+                "phpunit/phpunit": "^7.0 || ^8.0",
+                "squizlabs/php_codesniffer": "3.*",
+                "yoanm/jsonrpc-server-doc-sdk": "^0.2",
+                "yoanm/php-unit-extended": "^1.0"
+            },
+            "suggest": {
+                "yoanm/jsonrpc-params-symfony-validator-sdk": "Compatible params validator",
+                "yoanm/jsonrpc-server-doc-sdk": "Create documentation for your server",
+                "yoanm/jsonrpc-server-sdk-psr11-resolver": "Compatible PSR11 method resolver",
+                "yoanm/symfony-jsonrpc-http-server": "JSON-RPC HTTP Symfony server Bundle"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Yoanm\\JsonRpcServer\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Yoanm",
+                    "email": "yoanm@users.noreply.github.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Server SDK to convert a json-rpc request string into json-rpc response string",
+            "support": {
+                "issues": "https://github.com/yoanm/php-jsonrpc-server-sdk/issues",
+                "source": "https://github.com/yoanm/php-jsonrpc-server-sdk/tree/v3.1.2"
+            },
+            "time": "2020-07-09T04:39:07+00:00"
+        },
+        {
+            "name": "yoanm/symfony-jsonrpc-http-server",
+            "version": "v3.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yoanm/symfony-jsonrpc-http-server.git",
+                "reference": "72c500822452d570423a986f5ae4107faf3c7ec7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yoanm/symfony-jsonrpc-http-server/zipball/72c500822452d570423a986f5ae4107faf3c7ec7",
+                "reference": "72c500822452d570423a986f5ae4107faf3c7ec7",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2",
+                "psr/container": "^1.0",
+                "symfony/config": "^4.0 || ^5.0",
+                "symfony/dependency-injection": "^4.0 || ^5.0",
+                "symfony/event-dispatcher": "^4.0 || ^5.0",
+                "symfony/event-dispatcher-contracts": "^1.0 || ^2.0",
+                "symfony/http-foundation": "^4.0 || ^5.0",
+                "symfony/http-kernel": "^4.0 || ^5.0",
+                "yoanm/jsonrpc-server-sdk": "^3.0"
+            },
+            "require-dev": {
+                "behat/behat": "~3.0",
+                "matthiasnoback/symfony-config-test": "^3.0 || ^4.0",
+                "matthiasnoback/symfony-dependency-injection-test": "^3.0 || ^4.0",
+                "phpunit/phpunit": "^7.0 || ^8.0",
+                "squizlabs/php_codesniffer": "3.*",
+                "symfony/framework-bundle": "^4.0 || ^5.0",
+                "symfony/routing": "^4.0 || ^5.0",
+                "yoanm/php-unit-extended": "~1.0"
+            },
+            "suggest": {
+                "yoanm/symfony-jsonrpc-http-server-doc": "JSON-RPC documentation Bundle",
+                "yoanm/symfony-jsonrpc-params-validator": "Symfony bundle for easy JSON-RPC params validation"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Yoanm\\SymfonyJsonRpcHttpServer\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Yoanm",
+                    "email": "yoanm@users.noreply.github.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Symfony Bundle to convert an HTTP json-rpc request into HTTP json-rpc response",
+            "support": {
+                "issues": "https://github.com/yoanm/symfony-jsonrpc-http-server/issues",
+                "source": "https://github.com/yoanm/symfony-jsonrpc-http-server/tree/v3.0.4"
+            },
+            "time": "2020-12-08T06:44:07+00:00"
+        },
+        {
+            "name": "yoanm/symfony-jsonrpc-http-server-doc",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yoanm/symfony-jsonrpc-http-server-doc.git",
+                "reference": "7b3688ad1d5860abc06c3554c3c0be42faf77c43"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yoanm/symfony-jsonrpc-http-server-doc/zipball/7b3688ad1d5860abc06c3554c3c0be42faf77c43",
+                "reference": "7b3688ad1d5860abc06c3554c3c0be42faf77c43",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": ">=7.2",
+                "symfony/config": "^4.0 || ^5.0",
+                "symfony/dependency-injection": "^4.0 || ^5.0",
+                "symfony/event-dispatcher-contracts": "^1.0 || ^2.0",
+                "symfony/http-foundation": "^4.0 || ^5.0",
+                "symfony/http-kernel": "^4.0 || ^5.0",
+                "yoanm/jsonrpc-server-doc-sdk": "^0.2",
+                "yoanm/jsonrpc-server-sdk": "^3.0",
+                "yoanm/symfony-jsonrpc-http-server": "^3.0"
+            },
+            "require-dev": {
+                "behat/behat": "~3.0",
+                "matthiasnoback/symfony-config-test": "^3.0 || ^4.0",
+                "matthiasnoback/symfony-dependency-injection-test": "^3.0 || ^4.0",
+                "phpunit/phpunit": "^7.0 || ^8.0",
+                "squizlabs/php_codesniffer": "3.*",
+                "symfony/framework-bundle": "^4.0 || ^5.0",
+                "symfony/routing": "^4.0 || ^5.0",
+                "yoanm/php-unit-extended": "~1.0"
+            },
+            "suggest": {
+                "yoanm/symfony-jsonrpc-http-server": "Symfony Bundle to convert an HTTP json-rpc request into HTTP json-rpc response",
+                "yoanm/symfony-jsonrpc-http-server-openapi-doc": "Symfony bundle for easy JSON-RPC server OpenAPI 3.0.0 documentation",
+                "yoanm/symfony-jsonrpc-http-server-swagger-doc": "Symfony bundle for easy JSON-RPC server Swagger 2.0 documentation",
+                "yoanm/symfony-jsonrpc-params-sf-constraints-doc": "Symfony bundle for easy Symfony constraints to JSON-RPC documentation transformation"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Yoanm\\SymfonyJsonRpcHttpServerDoc\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Yoanm",
+                    "email": "yoanm@users.noreply.github.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Symfony bundle for easy JSON-RPC server documentation",
+            "support": {
+                "issues": "https://github.com/yoanm/symfony-jsonrpc-http-server-doc/issues",
+                "source": "https://github.com/yoanm/symfony-jsonrpc-http-server-doc/tree/v1.0.1"
+            },
+            "time": "2020-07-09T05:53:57+00:00"
+        },
+        {
+            "name": "yoanm/symfony-jsonrpc-params-sf-constraints-doc",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yoanm/symfony-jsonrpc-params-sf-constraints-doc.git",
+                "reference": "4c65ad24501cf2ff9543b60ec422eb1a38edeb5c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yoanm/symfony-jsonrpc-params-sf-constraints-doc/zipball/4c65ad24501cf2ff9543b60ec422eb1a38edeb5c",
+                "reference": "4c65ad24501cf2ff9543b60ec422eb1a38edeb5c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2",
+                "symfony/config": "^4.0 || ^5.0",
+                "symfony/dependency-injection": "^4.0 || ^5.0",
+                "symfony/http-kernel": "^4.0 || ^5.0",
+                "yoanm/jsonrpc-params-symfony-constraint-doc-sdk": "^1.0",
+                "yoanm/jsonrpc-params-symfony-validator-sdk": "^2.0",
+                "yoanm/jsonrpc-server-doc-sdk": "^0.2",
+                "yoanm/jsonrpc-server-sdk": "^3.0",
+                "yoanm/symfony-jsonrpc-http-server-doc": "^1.0"
+            },
+            "require-dev": {
+                "behat/behat": "~3.0",
+                "ext-json": "*",
+                "matthiasnoback/symfony-config-test": "^3.0 || ^4.0",
+                "matthiasnoback/symfony-dependency-injection-test": "^3.0 || ^4.0",
+                "phpunit/phpunit": "^7.0 || ^8.0",
+                "squizlabs/php_codesniffer": "3.*",
+                "symfony/framework-bundle": "^4.0 || ^5.0",
+                "symfony/routing": "^4.0 || ^5.0",
+                "yoanm/php-unit-extended": "~1.0"
+            },
+            "suggest": {
+                "yoanm/symfony-jsonrpc-http-server": "Symfony Bundle to convert an HTTP json-rpc request into HTTP json-rpc response"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Yoanm\\SymfonyJsonRpcParamsSfConstraintsDoc\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Yoanm",
+                    "email": "yoanm@users.noreply.github.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Symfony bundle for easy Symfony constraints to JSON-RPC documentation transformation",
+            "support": {
+                "issues": "https://github.com/yoanm/symfony-jsonrpc-params-sf-constraints-doc/issues",
+                "source": "https://github.com/yoanm/symfony-jsonrpc-params-sf-constraints-doc/tree/v1.0.1"
+            },
+            "time": "2020-07-09T11:44:21+00:00"
+        },
+        {
+            "name": "yoanm/symfony-jsonrpc-params-validator",
+            "version": "v2.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yoanm/symfony-jsonrpc-params-validator.git",
+                "reference": "4ed9d1facaeb19e651a2a0528e3977c5585b55f8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yoanm/symfony-jsonrpc-params-validator/zipball/4ed9d1facaeb19e651a2a0528e3977c5585b55f8",
+                "reference": "4ed9d1facaeb19e651a2a0528e3977c5585b55f8",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2",
+                "symfony/config": "^4.0 || ^5.0",
+                "symfony/dependency-injection": "^4.0 || ^5.0",
+                "symfony/http-kernel": "^4.0 || ^5.0",
+                "yoanm/jsonrpc-params-symfony-validator-sdk": "^2.0",
+                "yoanm/jsonrpc-server-sdk": "^3.0",
+                "yoanm/symfony-jsonrpc-http-server": "^3.0"
+            },
+            "require-dev": {
+                "behat/behat": "~3.0",
+                "ext-json": "*",
+                "matthiasnoback/symfony-config-test": "^3.0 || ^4.0",
+                "matthiasnoback/symfony-dependency-injection-test": "^3.0 || ^4.0",
+                "phpunit/phpunit": "^7.0 || ^8.0",
+                "squizlabs/php_codesniffer": "3.*",
+                "symfony/framework-bundle": "^4.0 || ^5.0",
+                "symfony/routing": "^4.0 || ^5.0",
+                "yoanm/php-unit-extended": "~1.0"
+            },
+            "suggest": {
+                "yoanm/symfony-jsonrpc-http-server": "Symfony Bundle to convert an HTTP json-rpc request into HTTP json-rpc response",
+                "yoanm/symfony-jsonrpc-params-sf-constraints-doc": "To generate payload documentation from validation constraints"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Yoanm\\SymfonyJsonRpcParamsValidator\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Yoanm",
+                    "email": "yoanm@users.noreply.github.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Symfony bundle for easy JSON-RPC params validation",
+            "support": {
+                "issues": "https://github.com/yoanm/symfony-jsonrpc-params-validator/issues",
+                "source": "https://github.com/yoanm/symfony-jsonrpc-params-validator/tree/v2.0.2"
+            },
+            "time": "2020-07-09T11:44:27+00:00"
         }
     ],
     "packages-dev": [

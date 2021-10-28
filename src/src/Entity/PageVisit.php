@@ -20,34 +20,22 @@ class PageVisit
     private ?int $id = null;
 
     /**
+     * @ORM\Column(type="datetime")
+     */
+    private DateTimeInterface $visit_time;
+
+    /**
      * @ORM\ManyToOne(targetEntity=Page::class, inversedBy="pageVisits")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $hash;
-
-    /**
-     * @ORM\Column(type="datetime")
-     */
-    private $visit_time;
+    private $url;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getHash(): ?Page
-    {
-        return $this->hash;
-    }
-
-    public function setHash(?Page $hash): self
-    {
-        $this->hash = $hash;
-
-        return $this;
-    }
-
-    public function getVisitTime(): ?DateTimeInterface
+    public function getVisitTime(): DateTimeInterface
     {
         return $this->visit_time;
     }
@@ -55,6 +43,18 @@ class PageVisit
     public function setVisitTime(DateTimeInterface $visit_time): self
     {
         $this->visit_time = $visit_time;
+
+        return $this;
+    }
+
+    public function getUrl(): ?Page
+    {
+        return $this->url;
+    }
+
+    public function setUrl(?Page $url): self
+    {
+        $this->url = $url;
 
         return $this;
     }

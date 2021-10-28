@@ -4,6 +4,8 @@ namespace App\Repository;
 
 use App\Entity\PageVisit;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\OptimisticLockException;
+use Doctrine\ORM\ORMException;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -19,32 +21,14 @@ class PageVisitRepository extends ServiceEntityRepository
         parent::__construct($registry, PageVisit::class);
     }
 
-    // /**
-    //  * @return PageVisit[] Returns an array of PageVisit objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    /**
+     * @param PageVisit $pageVisit
+     * @throws ORMException
+     * @throws OptimisticLockException
+     */
+    public function update(PageVisit $pageVisit): void
     {
-        return $this->createQueryBuilder('p')
-            ->andWhere('p.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('p.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
+        $this->getEntityManager()->persist($pageVisit);
+        $this->getEntityManager()->flush();
     }
-    */
-
-    /*
-    public function findOneBySomeField($value): ?PageVisit
-    {
-        return $this->createQueryBuilder('p')
-            ->andWhere('p.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
 }

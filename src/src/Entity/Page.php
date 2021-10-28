@@ -22,14 +22,24 @@ class Page
     private ?int $id = null;
 
     /**
-     * @ORM\Column(type="string", length=32)
-     */
-    private string $hash;
-
-    /**
      * @ORM\Column(type="string", length=255)
      */
     private string $url;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private ?DateTimeInterface $last_activity = null;
+
+    /**
+     * @ORM\OneToMany(targetEntity=PageVisit::class, mappedBy="url")
+     */
+    private Collection $pageVisits;
+
+    public function __construct()
+    {
+        $this->pageVisits = new ArrayCollection();
+    }
 
     /**
      * @return int|null
@@ -37,21 +47,6 @@ class Page
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    /**
-     * @ORM\Column(type="datetime")
-     */
-    private DateTimeInterface $last_activity;
-
-    /**
-     * @ORM\OneToMany(targetEntity=PageVisit::class, mappedBy="hash")
-     */
-    private $pageVisits;
-
-    public function __construct()
-    {
-        $this->pageVisits = new ArrayCollection();
     }
 
     public function getUrl(): string
@@ -66,24 +61,19 @@ class Page
         return $this;
     }
 
-    public function getHash(): ?string
-    {
-        return $this->hash;
-    }
-
-    public function setHash(string $hash): self
-    {
-        $this->hash = $hash;
-
-        return $this;
-    }
-
-    public function getLastActivity(): DateTimeInterface
+    /**
+     * @return DateTimeInterface
+     */
+    public function getLastActivity(): ?DateTimeInterface
     {
         return $this->last_activity;
     }
 
-    public function setLastActivity(DateTimeInterface $last_activity): self
+    /**
+     * @param DateTimeInterface $last_activity
+     * @return Page
+     */
+    public function setLastActivity(DateTimeInterface $last_activity): Page
     {
         $this->last_activity = $last_activity;
         return $this;
@@ -101,7 +91,7 @@ class Page
     {
         if (!$this->pageVisits->contains($pageVisit)) {
             $this->pageVisits[] = $pageVisit;
-            $pageVisit->setHash($this);
+            $pageVisit->setUrl($this);
         }
 
         return $this;
@@ -111,8 +101,8 @@ class Page
     {
         if ($this->pageVisits->removeElement($pageVisit)) {
             // set the owning side to null (unless already changed)
-            if ($pageVisit->getHash() === $this) {
-                $pageVisit->setHash(null);
+            if ($pageVisit->getUrl() === $this) {
+                $pageVisit->setUrl(null);
             }
         }
 

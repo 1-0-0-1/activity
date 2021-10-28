@@ -17,6 +17,11 @@ framework:
     php_errors:
         log: true
 
+json_rpc_http_server:
+    endpoint: "/api"
+json_rpc_http_server_doc: ~
+
+
 when@test:
     framework:
         test: true

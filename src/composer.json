@@ -15,9 +15,14 @@
         "symfony/dotenv": "5.3.*",
         "symfony/flex": "^1.3.1",
         "symfony/framework-bundle": "5.3.*",
+        "symfony/monolog-bundle": "^3.7",
         "symfony/proxy-manager-bridge": "5.3.*",
         "symfony/runtime": "5.3.*",
-        "symfony/yaml": "5.3.*"
+        "symfony/yaml": "5.3.*",
+        "yoanm/symfony-jsonrpc-http-server": "^3.0",
+        "yoanm/symfony-jsonrpc-http-server-doc": "^1.0",
+        "yoanm/symfony-jsonrpc-params-sf-constraints-doc": "^1.0",
+        "yoanm/symfony-jsonrpc-params-validator": "^2.0"
     },
     "config": {
         "optimize-autoloader": true,
